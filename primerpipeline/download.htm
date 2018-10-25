@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PrimerPipeline - Download</title>
+        <link rel="stylesheet" href="../css/bootstrap.material.min.css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="../cookie-check/jquery.cookiebar.js"></script>
+        <link rel="stylesheet" href="../cookie-check/jquery.cookiebar.css"></link>
+        <script src="../cookie-check/cookieChecker.js"></script>
+        
+        <script src="../js/google-analytics.js"></script>
+    </head>
+    
+    <body>
+        <div class="page-container">
+            
+            <div>
+                <img class="img-responsive" src="images/backgroundPhoto.png" alt="PrimerPipeline">
+            </div>
+            
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../default.htm">Scrufster.com</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="myNavbar" aria-expanded="false" style="height: 1px;">
+                        <ul class="nav navbar-nav">                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HabitApp <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../habitapp/default.htm">Overview</a></li>
+                                    <li><a href="../habitapp/webversion/default.htm">Web Version</a></li>
+                                    <li><a href="../habitapp/download.htm">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PrimerPipeline <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="default.htm">Overview</a></li>
+                                    <li><a href="howitworks.htm">How it Works</a></li>
+                                    <li><a href="acknowledgements.htm">Acknowledgements</a></li>
+                                    <li><a href="#">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../about/default.htm">Who We Are</a></li>
+                                    <li><a href="../about/referencing.htm">Referencing Us</a></li>
+                                    <li><a href="../about/contact.htm">Contact</a></li>
+                                </ul>
+                            </li>                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+  
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">Download</h1>
+                    <div class="lead">
+                        <p><i>PrimerPipeline</i> runs on Windows XP and onwards.</p>
+                        <a href="PrimerPipeline.zip" class="btn btn-primary" id="download">DOWNLOAD PRIMERPIPELINE.ZIP</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">System Requirements</h1>
+                    <div class="lead">
+                        <p>If you are using Windows 7 or later then you will be able to run <i>PrimerPipeline</i>.</p>
+                        <p>If you are using Windows XP, then you must ensure that you have Microsoft .NET Framework 4.0 installed.</p>
+                        <p>Note: To find out which version of the .NET Framework you have on your PC, go to:</p>
+                        <p>Start > Control Panel > Add/Remove Programs</p>
+                        <p>And look for Microsoft .NET Framework. If you don't have it, .NET Framework 4 can be downloaded from Microsoft <a href="http://www.microsoft.com/en-gb/download/details.aspx?id=17851">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">Installation</h1>
+                    <div class="lead">
+                        <ol class="list">
+                            <li>Download <i>PrimerPipeline.zip</i> from the link below.</li>
+                            <li>Unzip the archive. It should contain the following files:
+                                <ul>
+                                    <li>
+                                        <p><b>PrimerPipeline.exe</b></p>
+                                        <p>This is the <i>PrimerPipeline</i> program itself.</p>
+                                    </li>
+                                    
+                                    <li>
+                                        <p><b>PrimerPipeline_ Instruction_manual_v1.0</b></p>
+                                        <p>The user guide for <i>PrimerPipeline</i>.</p>
+                                    </li>
+                                    
+                                    <li>
+                                        <p><b>primer3_core.exe</b></p>
+                                        <p>This is Primer3. <i>PrimerPipeline</i> will run this program in the background during the Primer3 stage of the process.</p>
+                                    </li>
+                                    
+                                    <li>
+                                        <p><b>primer3_config</b></p>
+                                        <p>This directory contains settings files used by Primer3.</p>
+                                    </li>
+                                    
+                                    <li>
+                                        <p><b>example.fasta</b></p>
+                                        <p>A test file.</p>
+                                    </li>
+                                </ul>		
+                            </li>
+                            <li>Place the entire extracted folder somewhere on your PC. It is not recommended to do this in the root of your C drive, or in Program files, - doing so will require you to run <i>PrimerPipeline</i> as an administrator in order for it to write files.</li>
+                            <li>If required, make a shortcut to <i>PrimerPipeline.exe</i>.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">Source Code</h1>
+                    <div class="lead">
+                        <p><i>PrimerPipeline</i> is open source. You can check out the code on <a href="https://github.com/scrufster/primerpipeline">GitHub</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <div class="container">
+                    &copy; Scrufster 2016
+                </div>
+            </footer>            
+        </div>
+        
+        <script>
+            var downloadButton = document.querySelector('#download');
+            downloadButton.addEventListener('click', function()
+            {
+                if(jQuery.cookieBar('cookies'))
+                {
+                    ga('send', 'event', 'Download PrimerPipeline Button', 'download', 'PrimerPipeline.zip');
+                }
+            });
+        </script>
+    </body>
+</html>
+  

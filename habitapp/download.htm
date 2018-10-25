@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HabitApp - Download</title>
+        <link rel="stylesheet" href="../css/bootstrap.material.min.css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="../cookie-check/jquery.cookiebar.js"></script>
+        <link rel="stylesheet" href="../cookie-check/jquery.cookiebar.css"></link>
+        <script src="../cookie-check/cookieChecker.js"></script>
+        
+        <script src="../js/google-analytics.js"></script>
+    </head>
+    
+    <body>
+        <div class="page-container">
+            
+            <div>
+                <img class="img-responsive" src="images/backgroundPhoto.png" alt="HabitApp">
+            </div>
+            
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../default.htm">Scrufster.com</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="myNavbar" aria-expanded="false" style="height: 1px;">
+                        <ul class="nav navbar-nav">                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HabitApp <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="default.htm">Overview</a></li>
+                                    <li><a href="webversion/default.htm">Web Version</a></li>
+                                    <li><a href="#">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PrimerPipeline <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../primerpipeline/default.htm">Overview</a></li>
+                                    <li><a href="../primerpipeline/howitworks.htm">How it Works</a></li>
+                                    <li><a href="../primerpipeline/acknowledgements.htm">Acknowledgements</a></li>
+                                    <li><a href="../primerpipeline/download.htm">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../about/default.htm">Who We Are</a></li>
+                                    <li><a href="../about/referencing.htm">Referencing Us</a></li>
+                                    <li><a href="../about/contact.htm">Contact</a></li>
+                                </ul>
+                            </li>                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">Download</h1>
+                    <div class="lead">
+                        <a href="HabitApp.exe" class="btn btn-primary" id="download">DOWNLOAD HABITAPP.EXE</a>                        
+                        <a href="https://play.google.com/store/apps/details?id=com.scrufster.habitapp&hl=en&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1">
+                            <img class="play-badge"  alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">System Requirements - Windows</h1>
+                    <div class="lead">
+                        <p>If you are using Windows 7 or later then you will be able to run <i>HabitApp</i>.</p>
+                        <p>If you are using Windows XP, then you must ensure that you have Microsoft .NET Framework 4.0 installed.</p>
+                        <p>Note: To find out which version of the .NET Framework you have on your PC, go to:</p>
+                        <p>Start > Control Panel > Add/Remove Programs</p>
+                        <p>And look for Microsoft .NET Framework. If you don't have it, .NET Framework 4 can be 
+                            downloaded from Microsoft <a href="http://www.microsoft.com/en-gb/download/details.aspx?id=17851">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">Source Code</h1>
+                    <div class="lead">
+                        <p><i>HabitApp</i> is open source. You can check out the code on <a href="https://github.com/scrufster/habitapp">GitHub</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <div class="container">
+                    &copy; Scrufster 2016
+                </div>
+            </footer>            
+        </div>
+        
+        <script>
+            var downloadButton = document.querySelector('#download');
+            downloadButton.addEventListener('click', function()
+            {
+                if(jQuery.cookieBar('cookies'))
+                {
+                    ga('send', 'event', 'Download HabitApp Button', 'download', 'HabitApp.exe');
+                }
+            });
+        </script>
+    </body>
+</html>

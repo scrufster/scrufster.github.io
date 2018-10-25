@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HabitApp - Web Version</title>
+        <link rel="stylesheet" href="../../css/bootstrap.material.min.css">
+        <link rel="stylesheet" href="../../css/styles.css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script> 
+        
+        <script type="text/javascript" src="../../cookie-check/jquery.cookiebar.js"></script>
+        <link rel="stylesheet" href="../../cookie-check/jquery.cookiebar.css"></link>
+        <script src="../../cookie-check/cookieChecker.js"></script>
+               
+        <script src="../../js/google-analytics.js"></script> 
+    </head>
+
+    <body>
+        <div class="page-container">
+            
+            <div>
+                <img class="img-responsive" src="../images/backgroundPhoto.png" alt="HabitApp">
+            </div>
+            
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../../default.htm">Scrufster.com</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="myNavbar" aria-expanded="false" style="height: 1px;">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HabitApp <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../default.htm">Overview</a></li>
+                                    <li><a href="#">Web Version</a></li>
+                                    <li><a href="../download.htm">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PrimerPipeline <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../../primerpipeline/default.htm">Overview</a></li>
+                                    <li><a href="../../primerpipeline/howitworks.htm">How it Works</a></li>
+                                    <li><a href="../../primerpipeline/acknowledgements.htm">Acknowledgements</a></li>
+                                    <li><a href="../../primerpipeline/download.htm">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../../about/default.htm">Who We Are</a></li>
+                                    <li><a href="../../about/referencing.htm">Referencing Us</a></li>
+                                    <li><a href="../../about/contact.htm">Contact</a></li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h1 class="section-title">HabitApp</h1> 
+                
+                        <div class="habitapp-image-container">
+                            <canvas class="habitapp-image" id="canvas_Original"></canvas>
+                            <canvas class="habitapp-image" id="canvas_Result"></canvas>
+                        </div>
+                    
+                        <input type="range" class="slider" min="0" max="255" id="slider">
+                        <p class="lead"><b>Cut-off:</b> <span id="cutOffValue"></span></p>
+                        <p class="lead"><b>Percentage coverage:</b> <span id="coverageResultOutput"></span></p>
+                        
+                        <div>
+                            <button class="btn btn-default btn-lg btn-block" id="getPhoto">TAKE A PHOTO</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h1 class="section-title">User Guide</h1>
+                        <ol class="lead">
+                            <li>
+                                <p>Click the <i>TAKE A PHOTO</i> button. This will allow you to either load a photo or, if using a smart device, take a photo using the device camera.</p>
+                                <p><b>Note:</b> To take a photo using a smart device you must ensure that your browser has permission to access your camera. This can
+                                usually be set via the privacy settings on your device.
+                                </p> 
+                            </li>
+                            <li>
+                                <p>Your photo will appear above, with the original image on the left, and the coverage image on the right. Move the slider until the coverage image 
+                                    best represents your original photo. The slider is altering the <i>cut-off</i> value, which controls the point at which a 
+                                    given pixel is converted to either black or white.
+                                </p>
+                            </li>
+                            <li>
+                                <p>The percentage coverage shown in your photo is calculated and displayed.</p>
+                            </li>
+                            <li>
+                                <p>To repeat the test with a new image at the same location, ideally you should use the same <i>cut-off</i> value, unless conditions 
+                                such as sunlight or cloud cover have changed.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <footer class="footer">
+                <div class="container">
+                    &copy; Scrufster 2016
+                </div>
+            </footer>
+        </div>
+        
+        <script src="js/HabitApp.min.js"></script>
+        <script>
+            
+            var slider = document.querySelector('#slider');
+            slider.addEventListener('change', function()
+            {
+                //Store the slider value in local storage:
+                localStorage.setItem('sliderValue', slider.value);
+            });
+            
+            //Set the initial slider value to the last one used:
+            var sliderValue = localStorage.getItem('sliderValue');
+            if(sliderValue)
+            {
+                slider.value = sliderValue;
+            }
+                
+            var habitApp = new HabitApp(
+            {
+                canvas_Result: document.querySelector('#canvas_Result'),
+                canvas_Original: document.querySelector('#canvas_Original'),
+                slider: slider,
+                cutOffValue: document.querySelector('#cutOffValue'),
+                coverageResultOutput: document.querySelector('#coverageResultOutput')
+            });
+            
+            //Create and use a file input:
+            var fileInput = document.createElement('input');
+            fileInput.type = "file";
+            fileInput.accept = "image/*"
+            fileInput.capture = "camera";
+            
+            fileInput.onchange = function (e)
+            {
+                habitApp.setImage(URL.createObjectURL(e.target.files[0]));
+            };
+            
+            var getPhoto = document.querySelector('#getPhoto');
+            getPhoto.onclick = function ()
+            {
+                //Log this use:
+                ga('send', 'event', 'HabitApp Web', 'load photo', 'HabitAppWeb');
+                
+                //Trigger the file selector:
+                fileInput.click();
+            };
+            
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,19 @@
+.slider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.habitapp-image {
+    display: inline-block;
+    margin: 0px;
+    width: 49%;
+    height: 49;
+}
+
+.habitapp-image-container {
+    margin: 10px auto;
+}
+
+.play-badge {
+    max-height: 35px;
+}

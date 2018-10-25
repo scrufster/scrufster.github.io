@@ -1,0 +1,32 @@
+.active {
+    font-weight: bold;
+}
+
+body {
+    background: lightgray;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+
+.page-container {
+    margin: 0px auto;
+    max-width: 960px;
+}
+
+.panel {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+}
+
+.section-title {
+    font-size: 1.8em;
+    font-weight: bold;   
+    text-align: left; 
+}
+
+.under-image {
+    margin-top: 10px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PrimerPipeline - How it Works</title>
+        <link rel="stylesheet" href="../css/bootstrap.material.min.css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="../cookie-check/jquery.cookiebar.js"></script>
+        <link rel="stylesheet" href="../cookie-check/jquery.cookiebar.css"></link>
+        <script src="../cookie-check/cookieChecker.js"></script>
+        
+        <script src="../js/google-analytics.js"></script>
+    </head>
+    
+    <body>
+        <div class="page-container">
+            
+            <div>
+                <img class="img-responsive" src="images/backgroundPhoto.png" alt="PrimerPipeline">
+            </div>
+            
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="../default.htm">Scrufster.com</a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="myNavbar" aria-expanded="false" style="height: 1px;">
+                        <ul class="nav navbar-nav">                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HabitApp <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../habitapp/default.htm">Overview</a></li>
+                                    <li><a href="../habitapp/webversion/default.htm">Web Version</a></li>
+                                    <li><a href="../habitapp/download.htm">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">PrimerPipeline <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="default.htm">Overview</a></li>
+                                    <li><a href="#">How it Works</a></li>
+                                    <li><a href="acknowledgements.htm">Acknowledgements</a></li>
+                                    <li><a href="download.htm">Download</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../about/default.htm">Who We Are</a></li>
+                                    <li><a href="../about/referencing.htm">Referencing Us</a></li>
+                                    <li><a href="../about/contact.htm">Contact</a></li>
+                                </ul>
+                            </li>                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">Using PrimerPipeline</h1>
+	  
+                    <div class="lead">
+                        <p><b>Note:</b> We assume quality control of the data has already been performed before using <i>PrimerPipeline</i>, and we recommend performing a <i>de novo</i> assembly 
+                        with your data with, for example, using <a href="http://soap.genomics.org.cn/soapdenovo.html">SOAPdenovo2</a>.</p>
+	  
+                        <ul class="list, ppUL">
+                            <li>
+                                <b>Step 1: Sequence Trimming and Finding Microsatellites</b>
+                                <p>This step incorporates sequence trimming and microsatellite mining (<a href="http://pgrc.ipk-gatersleben.de/misa/">MISA</a>).</p>
+                                <p>Sequence trimming removes ambiguous sequences and creates a minimum and maximum sequence length that will be used in microsatellite mining. Check 
+                                    that this minimum and maximum is suitable for your sequence data in the <i>Settings</i> tab.</p>
+                                <p>MISA will find microsatellites within your sequences from mononucleotides to hexanucleotide repeats ((A)30 to (TCACAC)6). In the <i>Settings</i> tab 
+                                you can set the minimum repeat motif of microsatellites for each type of microsat.</p>
+                                <p>Automatically creates input file for Primer3.</p>
+                            </li>
+                            <li>
+                                <b>Step 2: Primer3</b>
+                                <p><i>PrimerPipeline</i> incorporates <a href="http://primer3.ut.ee/primer3web_help.htm">Primer3</a> (Untergasser <i>et al.</i> 2012) which 
+                                designs primers around your newly found microsatellites. You have the same functionality as using Primer3 directly, all settings 
+                                can be adjusted to suit the user.</p>
+                            </li>
+                            <li>
+                                <b>Step 3: Creating the Results File</b>
+                                <p>When finished you can open a <i>Results</i> window, where the results are displayed in a user friendly way, allowing you to pick the primers 
+                                you chose to optimise in an easy, well informed way. The forward and reverse complement primers, and the microsatellite are colour coded for easy 
+                                visualisation of what you would be amplifying, and allows you to check your flanking regions. Your results file will be created in the same folder 
+                                as your original input file.</p>
+                            </li>
+                        </ul>
+                        <p>For full details on how to use <i>PrimerPipeline</i>, read the user manual. This is available as part of the <a href="download.htm">download</a>, or can
+                        be read separately <a href="PrimerPipeline_ Instruction_manual_v1.0.pdf">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1 class="section-title">How Long Does It Take?</h1>
+	  
+                    <div class="lead">
+                        <p>This will vary based on your computer and on your data, how many microsatellites are contained within it, and the settings that you use. 
+                            However, the <i>Status</i> column keeps you informed on <i>PrimerPipeline's</i> progress within each step, and presents a percentage 
+                            complete. There are also <i>Sequences read</i> and <i>SSRs found</i> columns, which update during Step 1.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <div class="container">
+                    &copy; Scrufster 2016
+                </div>
+            </footer>             
+        </div>
+    </body>
+</html>
